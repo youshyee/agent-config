@@ -1,0 +1,13 @@
+{
+  "lastChangelogVersion": "0.84.2",
+  "theme": "dark",
+  "defaultProvider": "qwen-token-plan-cn",
+  "defaultModel": "deepseek-v4-pro",
+  "defaultThinkingLevel": "high",
+  "compaction": {
+    "enabled": true
+  },
+  "showHardwareCursor": false,
+  "tuiMode": "fullscreen",
+  "autocompleteMaxVisible": 7
+}

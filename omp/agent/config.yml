@@ -1,0 +1,21 @@
+providers: 
+  webSearchOrder: 
+    []
+symbolPreset: nerd
+theme: 
+  light: light-canyon
+  dark: amethyst
+setupVersion: 1
+modelRoles: 
+  default: openai-codex/gpt-5.6-sol:high
+  vision: openai-codex/gpt-5.6-terra
+  tiny: openai-codex/gpt-5.3-codex-spark:medium
+  task: openai-codex/gpt-5.6-terra
+  plan: openai-codex/gpt-5.6-sol
+defaultThinkingLevel: auto
+retry: 
+  fallbackChains: 
+    default: 
+      - openai-codex/gpt-5.6-terra
+    openai-codex/gpt-5.3-codex-spark: 
+      - openai-codex/gpt-5.6-luna
