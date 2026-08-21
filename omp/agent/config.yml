@@ -4,18 +4,66 @@ providers:
 symbolPreset: nerd
 theme: 
   light: light-canyon
-  dark: amethyst
-setupVersion: 1
+  dark: basalt
+setupVersion: 2
 modelRoles: 
-  default: openai-codex/gpt-5.6-sol:high
-  vision: openai-codex/gpt-5.6-terra
-  tiny: openai-codex/gpt-5.3-codex-spark:medium
-  task: openai-codex/gpt-5.6-terra
+  default: openai-codex/gpt-5.6-sol:auto
+  smol: openai-codex/gpt-5.6-luna:high
+  slow: openai-codex/gpt-5.6-sol:high
+  vision: openai-codex/gpt-5.6-sol
+  tiny: openai-codex/gpt-5.3-codex-spark:low
+  commit: openai-codex/gpt-5.3-codex-spark:medium
+  task: openai-codex/gpt-5.6-terra:auto
   plan: openai-codex/gpt-5.6-sol
 defaultThinkingLevel: auto
+cycleOrder: 
+  - default
+  - slow
+  - smol
+  - tiny
 retry: 
   fallbackChains: 
     default: 
       - openai-codex/gpt-5.6-terra
+      - deepseek/deepseek-v4-pro
+    smol: 
+      - minimax-code-cn/MiniMax-M3
+      - deepseek/deepseek-v4-flash
+    slow: 
+      - openai-codex/gpt-5.6-sol:high
+    tiny: 
+      - deepseek/deepseek-v4-flash
+      - minimax-code-cn/MiniMax-M2.7
+    vision: 
+      - minimax-code-cn/MiniMax-M3
     openai-codex/gpt-5.3-codex-spark: 
       - openai-codex/gpt-5.6-luna
+skills: 
+  enableCodexUser: false
+  enableClaudeUser: false
+  enableClaudeProject: false
+  enableOpenCodeUser: false
+  enableSkillCommands: false
+composer: 
+  shape: box
+statusLine: 
+  separator: powerline-thin
+  contextLine: annotated
+  preset: default
+terminal: 
+  showProgress: false
+error: 
+  notify: "off"
+power: 
+  sleepPrevention: "off"
+github: 
+  cache: 
+    enabled: false
+dev: 
+  autoqa: false
+task: 
+  maxConcurrency: 8
+  enableEffort: true
+  maxRecursionDepth: 2
+display: 
+  showTokenUsage: true

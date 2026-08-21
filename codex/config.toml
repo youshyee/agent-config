@@ -15,9 +15,13 @@ trust_level = "trusted"
 [projects."/home/youshyee"]
 trust_level = "trusted"
 
+[projects."/home/youshyee/vibe/agent-monitor"]
+trust_level = "trusted"
+
 [tui.model_availability_nux]
 "gpt-5.6-sol" = 4
 "gpt-5.6-terra" = 4
 "gpt-5.6-luna" = 4
 
-
+[features]
+hooks = true
