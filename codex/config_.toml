@@ -1,10 +1,11 @@
-personality = "pragmatic"
-model_reasoning_effort = "high"
-model = "gpt-5.6-sol"
-model_context_window = 1000000
-model_auto_compact_token_limit=900000
-sandbox_mode = "danger-full-access"
-approval_policy = "never"
+model = "deepseek-v4.1-flash"
+model_provider = "opencode-go"
+
+[model_providers.opencode-go]
+name = "OpenCode Go"
+base_url = "https://opencode.ai/zen/go/v1"
+env_key = "OPENCODE_GO_API_KEY"
+requires_openai_auth = false
 
 [tui]
 theme = "catppuccin-mocha"
@@ -49,6 +50,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/home/youshyee/vibe/mirror-prism-deploy"]
+trust_level = "trusted"
+
+[projects."/home/youshyee/.config/agent-config"]
 trust_level = "trusted"
 
 [features]

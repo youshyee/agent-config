@@ -1,69 +1,97 @@
-providers: 
-  webSearchOrder: 
+providers:
+  webSearchOrder:
     []
+disabledProviders:
+  - anthropic
+  - openai
+  - ollama
+  - deepseek
+  - zhipu-coding-plan
 symbolPreset: nerd
-theme: 
+theme:
   light: light-canyon
-  dark: basalt
+  dark: dark-dracula
 setupVersion: 2
-modelRoles: 
-  default: openai-codex/gpt-5.6-sol:auto
-  smol: openai-codex/gpt-5.6-luna:high
-  slow: openai-codex/gpt-5.6-sol:high
-  vision: openai-codex/gpt-5.6-sol
-  tiny: openai-codex/gpt-5.3-codex-spark:low
-  commit: openai-codex/gpt-5.3-codex-spark:medium
+modelRoles:
+  default: opencode-go/muse-spark-1.3-contributor:auto
+  smol: opencode-go/deepseek-v4.1-flash:auto
+  slow: openai-codex/gpt-6-astra:auto
+  vision: openai-codex/gpt-5.6-sol:auto
+  tiny: openai-codex/gpt-5.6-luna:auto
+  commit: minimax-code-cn/MiniMax-M3:auto
   task: openai-codex/gpt-5.6-terra:auto
   plan: openai-codex/gpt-5.6-sol
+  advisor: openai-codex/gpt-6-astra:auto
 defaultThinkingLevel: auto
-cycleOrder: 
+cycleOrder:
   - default
-  - slow
   - smol
+  - slow
   - tiny
-retry: 
-  fallbackChains: 
-    default: 
-      - openai-codex/gpt-5.6-terra
-      - deepseek/deepseek-v4-pro
-    smol: 
-      - minimax-code-cn/MiniMax-M3
-      - deepseek/deepseek-v4-flash
-    slow: 
-      - openai-codex/gpt-5.6-sol:high
-    tiny: 
-      - deepseek/deepseek-v4-flash
-      - minimax-code-cn/MiniMax-M2.7
-    vision: 
-      - minimax-code-cn/MiniMax-M3
-    openai-codex/gpt-5.3-codex-spark: 
-      - openai-codex/gpt-5.6-luna
-skills: 
+retry:
+  enabled: true
+  maxRetries: 5
+  baseDelayMs: 30000
+  maxDelayMs: 300000
+  modelFallback: true
+  fallbackRevertPolicy: cooldown-expiry
+  fallbackChains: null
+  default:
+    - openai-codex/gpt-5.6-sol:medium
+    - alibaba-token-plan/deepseek-v4.1-flash
+    - alibaba-token-plan/glm-5.2
+  smol:
+    - openai-codex/gpt-5.6-luna:high
+    - minimax-code-cn/MiniMax-M3
+    - alibaba-token-plan/deepseek-v4.1-flash
+  slow:
+    - openai-codex/gpt-5.6-astra:auto
+    - alibaba-token-plan/qwen3.8-max
+  task:
+    - opencode-go/muse-spark-1.3-contributor:auto
+    - alibaba-token-plan/deepseek-v4.1-flash:auto
+  tiny:
+    - minimax-code-cn/MiniMax-M2.7
+    - alibaba-token-plan/qwen3.8-flash
+  vision:
+    - minimax-code-cn/MiniMax-M3
+    - alibaba-token-plan/qwen3.8-max
+  openai-codex/gpt-5.3-codex-spark:
+    - openai-codex/gpt-5.6-luna
+    - minimax-code-cn/MiniMax-M2.7
+  openai-go/muse-spark-1.3-contributor:
+    - minimax-code-cn/MiniMax-M3
+  openai-go/deepseek-v4.1-flash:
+    - oslm/deepseek-v4-flash
+skills:
   enableCodexUser: false
   enableClaudeUser: false
   enableClaudeProject: false
   enableOpenCodeUser: false
   enableSkillCommands: false
-composer: 
+composer:
   shape: box
-statusLine: 
+statusLine:
   separator: powerline-thin
   contextLine: annotated
   preset: default
-terminal: 
+terminal:
   showProgress: false
-error: 
+error:
   notify: "off"
-power: 
+power:
   sleepPrevention: "off"
-github: 
-  cache: 
+github:
+  cache:
     enabled: false
-dev: 
+dev:
   autoqa: false
-task: 
+task:
   maxConcurrency: 8
   enableEffort: true
   maxRecursionDepth: 2
-display: 
+display:
   showTokenUsage: true
+extendedContext: true
+tui:
+  codexResetFireworks: true
