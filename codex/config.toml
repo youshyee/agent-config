@@ -8,6 +8,8 @@ approval_policy = "never"
 
 [tui]
 theme = "catppuccin-mocha"
+animations = false
+screen_reader_detection_done = true
 
 [tui.model_availability_nux]
 "gpt-5.6-luna" = 4
@@ -49,6 +51,15 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/home/youshyee/vibe/mirror-prism-deploy"]
+trust_level = "trusted"
+
+[projects."/home/youshyee/vibe/windtunnel-studio"]
+trust_level = "trusted"
+
+[projects."/home/youshyee/temp/b2c_project"]
+trust_level = "trusted"
+
+[projects."/home/youshyee/oct1"]
 trust_level = "trusted"
 
 [features]
